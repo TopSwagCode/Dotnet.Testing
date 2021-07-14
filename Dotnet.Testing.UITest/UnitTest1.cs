@@ -33,7 +33,7 @@ namespace Dotnet.Testing.UITest
                 var text = webdriver.FindElement(By.XPath("//ul/li[1]")).Text;
                 Assert.AreEqual(exp_text, text);
 
-                String curr_window_title = webdriver.Title;
+                string curr_window_title = webdriver.Title;
                 Assert.AreEqual(exp_title, curr_window_title);
             }
             catch (Exception e)
