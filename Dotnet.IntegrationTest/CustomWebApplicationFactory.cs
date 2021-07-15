@@ -37,7 +37,7 @@ namespace Dotnet.IntegrationTest
                     var logger = scopedServices
                         .GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
 
-                    db.Database.EnsureCreated();
+                    //db.Database.EnsureCreated();
 
                     try
                     {
