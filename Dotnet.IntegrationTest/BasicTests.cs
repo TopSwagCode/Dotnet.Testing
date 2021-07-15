@@ -6,8 +6,7 @@ using Xunit;
 namespace Dotnet.IntegrationTest
 {
     // https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-5.0
-    public class BasicTests 
-        : IClassFixture<WebApplicationFactory<Dotnet.Testing.Web.Startup>>
+    public class BasicTests : IClassFixture<WebApplicationFactory<Dotnet.Testing.Web.Startup>>
     {
         private readonly WebApplicationFactory<Dotnet.Testing.Web.Startup> _factory;
 
