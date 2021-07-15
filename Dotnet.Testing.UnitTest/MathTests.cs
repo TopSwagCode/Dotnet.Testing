@@ -10,6 +10,9 @@ namespace Dotnet.Testing.UnitTest
         {
         }
 
+        [TestCase(new int[] { 12, -3 }, ExpectedResult = 9)]
+        [TestCase(new int[] { 12, -2 }, ExpectedResult = 10)]
+        [TestCase(new int[] { 12, -4 }, ExpectedResult = 8)]
         [TestCase(new int[] { 12, 3 }, ExpectedResult = 15)]
         [TestCase(new int[] { 12, 2 }, ExpectedResult = 14)]
         [TestCase(new int[] { 12, 4 }, ExpectedResult = 16)]

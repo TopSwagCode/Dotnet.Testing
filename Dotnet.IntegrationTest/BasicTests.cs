@@ -1,15 +1,17 @@
-using NUnit.Framework;
+using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Xunit;
 
-namespace Dotnet.Testing.IntegrationTestt
+namespace Dotnet.IntegrationTest
 {
-    
     // https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-5.0
     public class BasicTests 
-        : IClassFixture<WebApplicationFactory<RazorPagesProject.Startup>>
+        : IClassFixture<WebApplicationFactory<Dotnet.Testing.Web.Startup>>
     {
-        private readonly WebApplicationFactory<RazorPagesProject.Startup> _factory;
+        private readonly WebApplicationFactory<Dotnet.Testing.Web.Startup> _factory;
 
-        public BasicTests(WebApplicationFactory<RazorPagesProject.Startup> factory)
+        public BasicTests(WebApplicationFactory<Dotnet.Testing.Web.Startup> factory)
         {
             _factory = factory;
         }
@@ -17,9 +19,7 @@ namespace Dotnet.Testing.IntegrationTestt
         [Theory]
         [InlineData("/")]
         [InlineData("/Index")]
-        [InlineData("/About")]
         [InlineData("/Privacy")]
-        [InlineData("/Contact")]
         public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)
         {
             // Arrange
@@ -30,8 +30,7 @@ namespace Dotnet.Testing.IntegrationTestt
 
             // Assert
             response.EnsureSuccessStatusCode(); // Status Code 200-299
-            Assert.Equal("text/html; charset=utf-8", 
-                response.Content.Headers.ContentType.ToString());
+            Assert.Equal("text/html; charset=utf-8",response.Content.Headers.ContentType.ToString());
         }
     }
 }
