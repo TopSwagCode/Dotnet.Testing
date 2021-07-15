@@ -46,8 +46,7 @@ namespace Dotnet.IntegrationTest
                     }
                     catch (Exception ex)
                     {
-                        logger.LogError(ex, "An error occurred seeding the " +
-                                            "database with test messages. Error: {Message}", ex.Message);
+                        logger.LogError(ex, "An error occurred seeding the database with test messages. Error: {Message}", ex.Message);
                     }
                 }
             });

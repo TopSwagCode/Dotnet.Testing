@@ -16,7 +16,6 @@ namespace Dotnet.Testing.Web.Data
         
         public virtual DbSet<Message> Messages { get; set; }
         
-        #region snippet1
         public async virtual Task<List<Message>> GetMessagesAsync()
         {
             return await Messages
@@ -24,17 +23,13 @@ namespace Dotnet.Testing.Web.Data
                 .AsNoTracking()
                 .ToListAsync();
         }
-        #endregion
 
-        #region snippet2
         public async virtual Task AddMessageAsync(Message message)
         {
             await Messages.AddAsync(message);
             await SaveChangesAsync();
         }
-        #endregion
 
-        #region snippet3
         public async virtual Task DeleteAllMessagesAsync()
         {
             foreach (Message message in Messages)
@@ -44,9 +39,7 @@ namespace Dotnet.Testing.Web.Data
             
             await SaveChangesAsync();
         }
-        #endregion
 
-        #region snippet4
         public async virtual Task DeleteMessageAsync(int id)
         {
             var message = await Messages.FindAsync(id);
@@ -57,7 +50,6 @@ namespace Dotnet.Testing.Web.Data
                 await SaveChangesAsync();
             }
         }
-        #endregion
 
         public void Initialize()
         {
