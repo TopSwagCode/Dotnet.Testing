@@ -10,11 +10,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      ASPNETCORE_ENVIRONMENT: ci
     steps:
     - uses: actions/checkout@v2
     - name: Build the docker-compose stack
-      run: docker-compose up -d
+      run: docker-compose -f docker-compose.ci.yml up
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
