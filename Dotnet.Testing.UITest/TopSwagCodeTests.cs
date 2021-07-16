@@ -15,7 +15,14 @@ namespace Dotnet.Testing.UITest
         [OneTimeSetUp]
         public void Setup()
         {
-            webdriver  = new RemoteWebDriver(new Uri("http://localhost:4446/wd/hub"), options);
+            if (string.Equals("ci", Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")))
+            {
+                webdriver  = new RemoteWebDriver(new Uri("http://localhost:4446/wd/hub"), options);
+            }
+            else
+            {
+                webdriver = new FirefoxDriver(options);
+            }
         }
 
         [OneTimeTearDown]
