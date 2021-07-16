@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Xunit;
 using AngleSharp.Html.Dom;
+using Dotnet.IntegrationTest.Helpers;
 
 namespace Dotnet.IntegrationTest
 {
@@ -88,13 +89,10 @@ namespace Dotnet.IntegrationTest
             var content = await HtmlHelpers.GetDocumentAsync(defaultPage);
 
             //Act
-            var a = (IHtmlFormElement) content.QuerySelector("form[id='messages']");
-            var b = (IHtmlButtonElement) content.QuerySelector("form[id='messages']")
-                .QuerySelector("div[class='panel-body']")
-                .QuerySelector("button");
-            var response = await client.SendAsync(a
-                ,
-                b);
+            var response = await client.SendAsync((IHtmlFormElement) content.QuerySelector("form[id='messages']")
+                ,(IHtmlButtonElement) content.QuerySelector("form[id='messages']")
+                    .QuerySelector("div[class='panel-body']")
+                    .QuerySelector("button"));
 
             // Assert
             Assert.Equal(HttpStatusCode.OK, defaultPage.StatusCode);

@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 using AngleSharp.Html.Dom;
 using Xunit;
 
-
-namespace Dotnet.IntegrationTest
+namespace Dotnet.IntegrationTest.Helpers
 {
     public static class HttpClientExtensions
     {

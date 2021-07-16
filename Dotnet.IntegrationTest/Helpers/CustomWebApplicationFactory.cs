@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Linq;
 using Dotnet.Testing.Web.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Dotnet.IntegrationTest
+namespace Dotnet.IntegrationTest.Helpers
 {
     public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup: class
     {
@@ -36,9 +34,6 @@ namespace Dotnet.IntegrationTest
                     var db = scopedServices.GetRequiredService<ApplicationDbContext>();
                     var logger = scopedServices
                         .GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
-
-                    //db.Database.EnsureCreated();
-
                     try
                     {
                         Utilities.RunDbMigrationsForTests(db);
