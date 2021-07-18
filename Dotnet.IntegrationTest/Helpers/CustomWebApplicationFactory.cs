@@ -2,6 +2,7 @@
 using Dotnet.Testing.Web.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -36,8 +37,7 @@ namespace Dotnet.IntegrationTest.Helpers
                         .GetRequiredService<ILogger<CustomWebApplicationFactory<TStartup>>>();
                     try
                     {
-                        Utilities.RunDbMigrationsForTests(db);
-                        Utilities.InitializeDbForTests(db);
+                        db.Database.Migrate();
                     }
                     catch (Exception ex)
                     {

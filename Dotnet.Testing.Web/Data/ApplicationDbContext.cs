@@ -53,6 +53,7 @@ namespace Dotnet.Testing.Web.Data
 
         public void Initialize()
         {
+            Messages.RemoveRange(Messages.ToList());
             Messages.AddRange(GetSeedingMessages());
             SaveChanges();
         }
