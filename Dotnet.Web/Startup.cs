@@ -19,17 +19,8 @@ namespace Dotnet.Testing.Web
     {
         /*
          * TODO:
-         * https://theqalead.com/topics/what-are-automation-testing-tools/
-         * Add migrations
-         * Add Github actions
-         * Run postgres on github actions
-         * Run UI tests in docker
-         * Run UI tests on github actions
-         * Save screenshots external / S3 / github action artifact?
          * Run performance tests?
-         * profit :P
          */
-
 
         public Startup(IConfiguration configuration)
         {
