@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-Dotnet.Testing.Web-20837DEF-F20B-46AA-BE32-4DD1E2EE51EF</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <RootNamespace>Dotnet.Testing.Web</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

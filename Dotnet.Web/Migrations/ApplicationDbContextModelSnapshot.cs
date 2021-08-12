@@ -19,7 +19,7 @@ namespace Dotnet.Testing.Web.Migrations
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("Dotnet.Testing.Web.Data.Models.Message", b =>
+            modelBuilder.Entity("Dotnet.Web.Data.Models.Message", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
