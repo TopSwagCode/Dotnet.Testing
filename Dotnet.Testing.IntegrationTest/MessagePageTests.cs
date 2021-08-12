@@ -58,6 +58,10 @@ namespace Dotnet.IntegrationTest
             Assert.Equal(HttpStatusCode.OK, defaultPage.StatusCode);
             Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
             Assert.Equal("/Message", response.Headers.Location.OriginalString);
+            
+            using var dbContext = GetDbContext();
+            var messages = dbContext.Messages.ToList();
+            Assert.Equal(2,messages.Count);
         }
 
         [Fact]
@@ -86,7 +90,7 @@ namespace Dotnet.IntegrationTest
 
             using var dbContext = GetDbContext();
             var messages = dbContext.Messages.ToList();
-            var test = 123;
+            Assert.Equal(3,messages.Count);
         }
 
         [Fact]

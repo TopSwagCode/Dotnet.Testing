@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet.Testing.UnitTest", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet.Testing.UITest", "Dotnet.Testing.UITest\Dotnet.Testing.UITest.csproj", "{97D30ACD-9AA5-4CCE-A2CD-409656791E16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet.IntegrationTest", "Dotnet.IntegrationTest\Dotnet.IntegrationTest.csproj", "{F6521F39-AE0F-4F97-8239-997156599FC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet.Testing.IntegrationTest", "Dotnet.Testing.IntegrationTest\Dotnet.Testing.IntegrationTest.csproj", "{F6521F39-AE0F-4F97-8239-997156599FC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
